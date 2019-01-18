@@ -1,0 +1,10 @@
+{% extends "pizzas/base.html" %}
+{% block content %}
+	<p><a href="{{topic.id}}">{{ topic }}</a></p>
+	<p>Add a new entry:</p>
+	<form action="{{ topic.id }}" method='post'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button name='submit'>add topping</button>
+	</form>
+{% endblock content %}
